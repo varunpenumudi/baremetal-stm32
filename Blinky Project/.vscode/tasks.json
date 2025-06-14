@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "build firmware",
+      "command": "make",
+      "options": {
+        "shell": {
+          "executable": "/bin/bash"
+        }
+      },
+    },
+    {
+      "type": "shell",
+      "label": "build_debug",
+      "command": "make",
+    },
+    {
+      "type": "shell",
+      "label": "flash firmware",
+      "dependsOn": "build firmware",
+      "command": "st-flash",
+      "args": ["--reset", "write", "firmware.bin", "0x8000000"],
+      "options": {
+        "shell": {
+          "executable": "/bin/bash"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "label": "reset chip",
+      "command": "st-flash",
+      "args": ["reset"],
+      "options": {
+        "shell": {
+          "executable": "/bin/bash"
+        }
+      },
+      "problemMatcher": []
+    }
+  ]
+}
