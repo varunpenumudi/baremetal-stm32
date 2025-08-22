@@ -1023,20 +1023,20 @@ END GROUP
 .igot.plt       0x000000002000000c        0x0 load address 0x000000000800091c
  .igot.plt      0x000000002000000c        0x0 src/bootloader.o
 
-.bss            0x0000000020000010       0x58 load address 0x000000000800091c
+.bss            0x0000000020000010       0x98 load address 0x000000000800091c
  *(.bss*)
  .bss.ms_ticks  0x0000000020000010        0x8 ../shared/src/core/system.o
  .bss.data_buffer
-                0x0000000020000018       0x40 ../shared/src/core/uart.o
- .bss.rb        0x0000000020000058       0x10 ../shared/src/core/uart.o
+                0x0000000020000018       0x80 ../shared/src/core/uart.o
+ .bss.rb        0x0000000020000098       0x10 ../shared/src/core/uart.o
  *(COMMON)
-                0x0000000020000068                . = ALIGN (0x4)
-                0x0000000020000068                _ebss = .
+                0x00000000200000a8                . = ALIGN (0x4)
+                0x00000000200000a8                _ebss = .
 
 /DISCARD/
  *(.eh_frame)
-                0x0000000020000068                . = ALIGN (0x4)
-                0x0000000020000068                end = .
+                0x00000000200000a8                . = ALIGN (0x4)
+                0x00000000200000a8                end = .
                 0x0000000020005000                PROVIDE (_stack = (ORIGIN (ram) + LENGTH (ram)))
 OUTPUT(bootloader.elf elf32-littlearm)
 LOAD linker stubs
@@ -1215,34 +1215,34 @@ LOAD linker stubs
  .debug_line    0x00000000000031c7      0x29d ../../libopencm3/lib/libopencm3_stm32f1.a(nvic.o)
  .debug_line    0x0000000000003464      0x22c ../../libopencm3/lib/libopencm3_stm32f1.a(flash_common_all.o)
 
-.debug_str      0x0000000000000000    0x12efa
+.debug_str      0x0000000000000000    0x12efb
  .debug_str     0x0000000000000000     0xddad src/bootloader.o
                                        0xe018 (size before relaxing)
  .debug_str     0x000000000000ddad      0xc21 ../shared/src/core/system.o
                                        0xb0b8 (size before relaxing)
- .debug_str     0x000000000000e9ce     0x1177 ../shared/src/core/uart.o
-                                       0xc08e (size before relaxing)
- .debug_str     0x000000000000fb45       0x55 ../shared/src/core/ring_buffer.o
+ .debug_str     0x000000000000e9ce     0x1178 ../shared/src/core/uart.o
+                                       0xc08f (size before relaxing)
+ .debug_str     0x000000000000fb46       0x55 ../shared/src/core/ring_buffer.o
                                        0x6d92 (size before relaxing)
- .debug_str     0x000000000000fb9a      0x184 ../../libopencm3/lib/libopencm3_stm32f1.a(gpio.o)
+ .debug_str     0x000000000000fb9b      0x184 ../../libopencm3/lib/libopencm3_stm32f1.a(gpio.o)
                                        0x8162 (size before relaxing)
- .debug_str     0x000000000000fd1e       0x6c ../../libopencm3/lib/libopencm3_stm32f1.a(gpio_common_all.o)
+ .debug_str     0x000000000000fd1f       0x6c ../../libopencm3/lib/libopencm3_stm32f1.a(gpio_common_all.o)
                                        0x8160 (size before relaxing)
- .debug_str     0x000000000000fd8a      0xd43 ../../libopencm3/lib/libopencm3_stm32f1.a(rcc.o)
+ .debug_str     0x000000000000fd8b      0xd43 ../../libopencm3/lib/libopencm3_stm32f1.a(rcc.o)
                                        0x7dc2 (size before relaxing)
- .debug_str     0x0000000000010acd      0x379 ../../libopencm3/lib/libopencm3_stm32f1.a(rcc_common_all.o)
+ .debug_str     0x0000000000010ace      0x379 ../../libopencm3/lib/libopencm3_stm32f1.a(rcc_common_all.o)
                                        0x74c5 (size before relaxing)
- .debug_str     0x0000000000010e46      0x21b ../../libopencm3/lib/libopencm3_stm32f1.a(usart_common_all.o)
+ .debug_str     0x0000000000010e47      0x21b ../../libopencm3/lib/libopencm3_stm32f1.a(usart_common_all.o)
                                        0x8118 (size before relaxing)
- .debug_str     0x0000000000011061       0x1e ../../libopencm3/lib/libopencm3_stm32f1.a(usart_common_f124.o)
+ .debug_str     0x0000000000011062       0x1e ../../libopencm3/lib/libopencm3_stm32f1.a(usart_common_f124.o)
                                        0x7e84 (size before relaxing)
- .debug_str     0x000000000001107f     0x1c81 ../../libopencm3/lib/libopencm3_stm32f1.a(vector.o)
+ .debug_str     0x0000000000011080     0x1c81 ../../libopencm3/lib/libopencm3_stm32f1.a(vector.o)
                                        0x61b1 (size before relaxing)
- .debug_str     0x0000000000012d00       0xd2 ../../libopencm3/lib/libopencm3_stm32f1.a(systick.o)
+ .debug_str     0x0000000000012d01       0xd2 ../../libopencm3/lib/libopencm3_stm32f1.a(systick.o)
                                        0x4082 (size before relaxing)
- .debug_str     0x0000000000012dd2       0xc4 ../../libopencm3/lib/libopencm3_stm32f1.a(nvic.o)
+ .debug_str     0x0000000000012dd3       0xc4 ../../libopencm3/lib/libopencm3_stm32f1.a(nvic.o)
                                        0x577e (size before relaxing)
- .debug_str     0x0000000000012e96       0x64 ../../libopencm3/lib/libopencm3_stm32f1.a(flash_common_all.o)
+ .debug_str     0x0000000000012e97       0x64 ../../libopencm3/lib/libopencm3_stm32f1.a(flash_common_all.o)
                                        0x50b0 (size before relaxing)
 
 .comment        0x0000000000000000       0x33
